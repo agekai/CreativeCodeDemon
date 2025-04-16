@@ -40,7 +40,7 @@ function createDotFlashes() {
       x: random(width * 0.1, width * 0.9),
       y: random(30, height / 2.2),
       alpha: 200,
-      size: 3,
+      size: 20,
       growth: random(0.15, 0.4)
     });
   }
