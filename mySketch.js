@@ -2,7 +2,7 @@ let particles = [];
 let dotFlashes = [];
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(600, 600);
   noFill();
   textAlign(CENTER, CENTER);
   textFont("Noto Serif TC");
@@ -44,8 +44,8 @@ function drawAxes() {
 // ---------- 閃現的「點」們 ----------
 function createDotFlashes() {
   if (frameCount % 10 === 0) { // 控制生成頻率
-    let x = random(width* 0.1, width * 0.9);
-    let y = random(30, height / 2.2); // 上半區域
+    let x = random(width* 0.3, width * 0.8);
+    let y = random(30, height * 0.6); // 上半區域
     dotFlashes.push({
       x: x,
       y: y,
