@@ -2,7 +2,7 @@ let particles = [];
 let dotFlashes = [];
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(windowWidth, windowHeight);
   noFill();
   textAlign(CENTER, CENTER);
   textFont("Noto Serif TC");
