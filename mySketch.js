@@ -130,9 +130,12 @@ function drawFocus() {
     text("點", x, y);
   }
 
+  let flicker = map(sin(frameCount * 0.1), -1, 1, 80, 255); // 控制閃爍的強度
+  let glowColor = color(255, 255, 255, flicker); // 設置文字的螢光顏色
+	
   textSize(80);
   fill(0);
-  stroke(255);
+  stroke(glowColor);
   strokeWeight(3);
   text("黑", centerX, centerY);
   pop();
