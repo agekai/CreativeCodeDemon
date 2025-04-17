@@ -1,6 +1,6 @@
 let particles = [];
 let dotFlashes = [];
-let dotCount = 20;
+let dotCount = 10;
 let radius = 150;
 
 function setup() {
