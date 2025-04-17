@@ -1,8 +1,10 @@
 let particles = [];
 let dotFlashes = [];
+let dotCount = 20;
+let radius = 150;
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(600, 600);
   noFill();
   textAlign(CENTER, CENTER);
   textFont("Noto Serif TC");
@@ -12,9 +14,10 @@ function draw() {
   background(0, 40);
 
   // 第一象限的「閃點」
-  createDotFlashes();
-  updateDotFlashes();
-
+  //createDotFlashes();
+  //updateDotFlashes();
+	// 第一象限的焦點畫面
+  drawFocus(); 
   // 左下角原點火焰
   push();
   translate(100, height * 0.75);
@@ -108,6 +111,31 @@ function updateFlameParticles() {
       particles.splice(i, 1);
     }
   }
+}
+
+//在第一象限畫出「焦點」
+function drawFocus() {
+  push();
+  let centerX = width * 0.6;
+  let centerY = height * 0.35;
+
+  textSize(20);
+  fill(180);
+  noStroke();
+
+  for (let i = 0; i < dotCount; i++) {
+    let angle = TWO_PI / dotCount * i;
+    let x = centerX + cos(angle) * radius;
+    let y = centerY + sin(angle) * radius;
+    text("點", x, y);
+  }
+
+  textSize(80);
+  fill(0);
+  stroke(255);
+  strokeWeight(3);
+  text("黑", centerX, centerY);
+  pop();
 }
 
 function windowResized() {
